@@ -1,0 +1,30 @@
+<div class='submit_container'>
+	<form ng-submit='submit(songTitle, artistName, subType, tabText)'>
+		<div>
+			<label class='submit_label' for='song_title'>Song Title:</label>
+			<input ng-model='songTitle' class='submit_input' id='song_title' type='text'>
+		</div>
+
+		<div>
+			<label class='submit_label' for='artist_name'>Band or Artist Name:</label>
+			<input ng-model='artistName' class='submit_input' id='artist_name' type='text'>
+		</div>
+		
+		<div>
+			<label class='submit_label' for='sub_type'>Type</label>
+			<select ng-model='subType' id='sub_type'>
+				<option value='tab'>Tab</option>
+				<option value='chord'>Chord</option>
+			</select>
+		</div>
+		
+		<div>
+			<label class='submit_label' for='tab_text'>Tab Text:</label>
+			<textarea ng-model='tabText' class='submit_textarea' id='tab_text' rows='30' cols='80' placeholder='Copy and Paste Tab Text Here'></textarea>
+		</div>
+		
+		<div class='submit_btn'>
+			<input type='submit' value='Submit For Review'>
+		</div>
+	</form>
+</div>
