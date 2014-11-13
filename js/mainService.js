@@ -1,13 +1,11 @@
 var app = angular.module('tabsOnAngular');
 
-app.service('mainService', function() {
+app.service('songService', function ($firebase) {
 	var firebaseEndpoint = 'https://accurateguitartabs.firebaseio.com/';
 
-	var song = {};
-
-	song.
-
 	return {
-
-		};
+		getSongs: function() {
+			return $firebase(new Firebase(firebaseEndpoint + '/songs')).$asArray();
+		}
+	};
 });

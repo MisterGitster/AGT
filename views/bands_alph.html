@@ -1,1 +1,9 @@
-<h1>another test</h1>
+
+
+
+
+<div ng-repeat='artist in artists | unique: "artist_name" | filter:initial'>
+	<a >{{ artist }}</a>
+</div>
+
+	{{ initial }}

@@ -1,4 +1,4 @@
-var app = angular.module('tabsOnAngular', ['ui.router']);
+var app = angular.module('tabsOnAngular', ['ui.router', 'firebase','ui.utils']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
@@ -15,13 +15,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			controller: ''
 		})
 		.state('bands_alph', {
-			url: '/bands',
+			url: '/bands/:firstInitial',
 			templateUrl: '/views/bands_alph.html',
-			controller: ''
+			controller: 'MainController'
 		})
 		.state('band_page', {
-			url: '/thisisthename',
+			url: '/band',
 			templateUrl: '/views/band_page.html',
+			controller: ''
+		})
+		.state('tab_page', {
+			url: '/songnamewillgohere',
+			templateUrl: '/views/tab_page.html',
 			controller: ''
 		});
 });
