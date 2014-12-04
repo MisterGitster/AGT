@@ -3,49 +3,47 @@
 	<title>ACCURATE GUITAR TABS</title>
 	<!-- <link rel="stylesheet" href='node_modules/normalize.css/normalize.css'> -->
 	<link rel="stylesheet" href='css/styles.css'>
-
+	<link rel="shortcut icon" href="/guitaricon.ico"/>
 </head>
 <body ng-controller="MainController">
-
 	<header class='header'>
-		<div class='header-text'>A C C U R A T E &nbsp G U I T A R &nbsp T A B S</div>
+		<div class='header-text'>
+			<a href='#/'>A C C U R A T E &nbsp G U I T A R &nbsp T A B S</a>
+			<img src="Joshguitar2.png" width='80px'>
+		</div>
 		<div>
-			<div class='header-text sub'>B u i l d i n g &nbsp a &nbsp C o m m u n i t y &nbsp o f &nbsp A c c u r a c y</div>
+			<div class='header-text sub'>
+				B u i l d i n g &nbsp a &nbsp C o m m u n i t y &nbsp o f &nbsp A c c u r a c y
+			</div>
 		</div>
 	</header>
 
-	<div class='bar'></div>
-
 	<div class='search-container'>
+
 		<div class='alpha-search'>
 			<span ng-repeat='letter in alphabet'>
-				<a ng-click='getArtists(letter)' ng-href="#/bands/{{ letter }}">{{ letter }}</a>&nbsp
+				<a ng-click='getArtists()' ng-href="#/bands/{{ letter }}">{{ letter }}</a>&nbsp
 			</span>
 		</div>
+
 		<div class='manual-search'>
-			<form>
-                <input type="button" value="Search">
-				<input type="text" placeholder="Enter a Song Title" required class='search-bar'>
-			</form>
+			<form class='searchForm'>
+				<input ng-model='searchString' type="text" placeholder="Enter an Artist or Song Title" required class='search-bar'>
+				<ul ng-show='searchString' class='searchResults'>
+					<li ng-repeat='searches in songCollection | filter: {searchField: searchString}'>
+						<a ng-click='searchClick()' ng-href='#/song/{{ searches.url_song }}'><span class='search-song-name'>{{searches.song_name}}</span> - {{ searches.artist_name }}</a>
+					</li>
+				</ul>
 		</div>
-		<a href="#/submit">Submit</a>
 	</div>
 
 	<div ui-view></div>
 
-<!-- 	<div class='container'>
-		<div class='box'>
-			<header class='category-header'>
-				<div class='category-heading'>Most Popular</div>
-			</header>
-			<div class='category-body'></div>
-		</div>
-
-		<div class='box'></div>
-		<div class='box'></div>
-	</div> -->
-
-	<footer class='footer'></footer>
+	
+	<footer class='footer'>
+	<a href="#/submit">Submit</a>
+		<a href="#/contact">Contact Us (me)</a>
+	</footer>
 <!-- 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js' -->
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'></script>
 <!-- firebase -->
@@ -57,9 +55,14 @@
 	<script src='bower_components/angular-ui-utils/ui-utils.js'></script>
 
 	<script src='js/app.js'></script>
-	<script src='js/MainCtrl.js'></script>
-	<script src='js/mainService.js'></script>
-	<script src='js/artistService.js'></script>
+	<script src='js/MainController.js'></script>
+	<script src='js/HomeController.js'></script>
+	<script src='js/BandController.js'></script>
+	<script src='js/SongController.js'></script>
+	<script src='js/SubmitController.js'></script>
+	<script src='js/TabController.js'></script>
+	<script src='js/songService.js'></script>
+<!--	<script src='js/artistService.js'></script>
 
 </body>
 </html>

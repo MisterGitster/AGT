@@ -1,9 +1,12 @@
 
 
+<h3>BAND NAME</h3>
 
-
-<div ng-repeat='artist in artists | unique: "artist_name" | filter:initial'>
-	<a >{{ artist }}</a>
+<div class='bandpage-container'>
+	<div class='initial'> {{ initial }} </div>
+	<div class='bandpage-subcontainer'>
+		<div ng-repeat='artist in alphArtists | unique: "artist_name" | artistByLetter: initial | orderBy: "artist_name"'>
+			<a ng-click='getArtists()' ng-href='#/band/{{ artist.url_artist }}'>{{ artist.artist_name }}</a>
+		</div>		
+	</div>
 </div>
-
-	{{ initial }}

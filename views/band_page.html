@@ -1,5 +1,9 @@
-<h2>BAND NAME</h2>
+<div class='bandpage-container'>
+<h2>{{ columnheader }}</h2>
 
-<div ng-repeat='song in allSongs'>
-	{{ song.song_name }}
+<ul class='songlist'>
+	<li ng-repeat='artist in selectedArtist | songByBand: selectedBand | orderBy: "song_name"'>
+		<a ng-click='getTabInfo()' ng-href='#/song/{{ artist.url_song }}'>{{ artist.song_name }} <span class='songtype'> {{ artist.sub_type }} </span></a>
+	</li>
+</ul>
 </div>

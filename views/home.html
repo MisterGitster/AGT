@@ -3,9 +3,34 @@
 			<header class='category-header'>
 				<div class='category-heading'>Most Popular</div>
 			</header>
-			<div class='category-body'></div>
+			<div ng-repeat='song in homeSongs | orderBy: "page_views":true | limitTo:20' class='category-body'>
+				<div class='boxSong' >
+					<a ng-href='#/song/{{ song.url_song }}'><span class='search-song-name'>{{ song.song_name }}</span> -	 <i>{{ song.artist_name }}</i></a>
+				</div>
+			</div>
 		</div>
 
-		<div class='box'></div>
-		<div class='box'></div>
+
+		<div class='box'>
+			<header class='category-header'>
+				<div class='category-heading'>Most Recent</div>
+			</header>
+			<div ng-repeat='song in homeSongs | orderBy: "insert_date": true | limitTo:20' class='category-body'>
+				<div class='boxSong'>
+					<a ng-href='#/song/{{ song.url_song }}'><span class='search-song-name'>{{ song.song_name }}</span> - <i>{{ song.artist_name }}</i></a>
+				</div>
+			</div>
+		</div>
+
+
+		<div class='box'>
+			<header class='category-header'>
+				<div class='category-heading'>Recommended</div>
+			</header>
+			<div ng-repeat='song in homeSongs | orderBy: "insert_date": true | filter:{recommended: true} | limitTo:20' class='category-body'>
+				<div class='boxSong' >
+					<a ng-href='#/song/{{ song.url_song }}'><span class='search-song-name'>{{ song.song_name }}</span> - <i>{{ song.artist_name }}</i></a>
+				</div>
+			</div>
+		</div>
 	</div>

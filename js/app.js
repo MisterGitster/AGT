@@ -7,26 +7,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('home', {
 			url: '/',
 			templateUrl: '/views/home.html',
-			controller: ''
+			controller: 'HomeController'
 		})
 		.state('submit', {
 			url: '/submit',
 			templateUrl: '/views/submit.html',
-			controller: ''
+			controller: 'SubmitController'
 		})
-		.state('bands_alph', {
+		.state('bands', {
 			url: '/bands/:firstInitial',
 			templateUrl: '/views/bands_alph.html',
-			controller: 'MainController'
+			controller: 'BandController'
 		})
-		.state('band_page', {
-			url: '/band',
+		.state('band', {
+			url: '/band/:selectedBand',
 			templateUrl: '/views/band_page.html',
-			controller: ''
+			controller: 'SongController'
 		})
 		.state('tab_page', {
-			url: '/songnamewillgohere',
+			url: '/song/:selectedSong',
 			templateUrl: '/views/tab_page.html',
+			controller: 'TabController'
+		})
+		.state('contact', {
+			url: '/contact',
+			templateUrl: '/views/contact_us.html',
 			controller: ''
 		});
 });
