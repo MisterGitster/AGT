@@ -12,6 +12,24 @@ app.controller('TabController', function($scope, songService, $stateParams) {
 		}
 		$scope.songTab = songTab;
 		$scope.incrementPageViews($scope.songTab.$id);
+		$scope.showButton = true;
+
+		if (songTab.lyrics === false) {
+			$scope.showButton = false;
+		}
+
+		$scope.lyrics = false;
+
+		$scope.showOrHide = 'Show Lyrics';
+
+		$scope.lyricsToggle = function() {
+			$scope.lyrics = !$scope.lyrics;
+			if ($scope.showOrHide === 'Show Lyrics') {
+				$scope.showOrHide = 'Hide Lyrics';
+			} else {
+				$scope.showOrHide = 'Show Lyrics';
+			};
+		};
 	});
 
 });

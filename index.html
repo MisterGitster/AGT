@@ -30,7 +30,7 @@
 			<form class='searchForm'>
 				<input ng-model='searchString' type="text" placeholder="Enter an Artist or Song Title" required class='search-bar'>
 				<ul ng-show='searchString' class='searchResults'>
-					<li ng-repeat='searches in songCollection | filter: {searchField: searchString}'>
+					<li ng-repeat='searches in songCollection | filter: {searchField: searchString} | limitTo: 15'>
 						<a ng-click='searchClick()' ng-href='#/song/{{ searches.url_song }}'><span class='search-song-name'>{{searches.song_name}}</span> - {{ searches.artist_name }}</a>
 					</li>
 				</ul>
