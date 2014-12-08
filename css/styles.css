@@ -11,6 +11,10 @@ a {
    white-space: nowrap;
 }
 
+.highlight:hover {
+	background-color:lightgray;
+}
+
 span a {
 	padding: 2px;
 	color: white;
@@ -20,7 +24,7 @@ ul {
 	list-style-type: none;
 }
 
-h2 {
+.button_container {
 	/*padding-left: 160px;*/
 	text-align: center;
 }
@@ -92,7 +96,6 @@ textarea {
 .searchForm {
 	position: relative;
 	margin-top: 5px;
-	margin-bottom: 0px;
 }
 
 .search-bar {
@@ -104,10 +107,8 @@ textarea {
 	width: calc(100% - 12px);
 	position: absolute;
 	top: 9px;
-	left: 0;
 	background: F7F7F7;
 	border: 1px solid gray;
-	border-top: 0px;
 	padding-left: 10;
 }
 

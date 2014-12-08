@@ -1,6 +1,8 @@
-
-<h2>{{ songTab.song_name }} - {{ songTab.artist_name }}</h2>
+<div class='button_container'>
+	<h2>{{ songTab.song_name }} - {{ songTab.artist_name }}</h2>
 	<button class='btn' ng-click='lyricsToggle()' ng-show='showButton'>{{ showOrHide }}</button>
+</div>
+
 <div class='tab_container'>
 	<div>
 		<pre class='pre_lyrics' ng-show='lyrics'>
