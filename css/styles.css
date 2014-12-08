@@ -24,7 +24,7 @@ ul {
 	list-style-type: none;
 }
 
-.button_container {
+.button-container {
 	/*padding-left: 160px;*/
 	text-align: center;
 }
@@ -196,7 +196,7 @@ textarea {
 
 
 /*Tab Page Styles*/
-.tab_container {
+.tab-container {
 	display: flex;
 	justify-content: center;
 /*	margin-left: 160px;
@@ -209,14 +209,14 @@ textarea {
 	user-select: none;*/
 }
 
-.pre_tab {
+.pre-tab {
 	/*width:850px;*/
 	display:inline-block;
 	word-wrap:break-word;
 	padding-left: 20px;
 }
 
-.pre_lyrics {
+.pre-lyrics {
 	/*width:400px;*/
 	display:inline-block;
 	word-wrap:break-word;
@@ -224,7 +224,7 @@ textarea {
 
 
 /*Submit Page Styles*/
-.submit_label	 {
+.submit-label	 {
 	float: left;
 	width: 150px;
 	text-align: right;
@@ -234,17 +234,17 @@ textarea {
 	clear:left;
 }
 
-.submit_input {
+.submit-input {
 	margin-top: 12px;
 }
 
-.submit_btn {
+.submit-btn {
 	margin-left: 360px;
 	padding-top: 10px;
 }
 
 
 /*Contact Page Styles*/
-.contact_page {
+.contact-page {
 	padding: 50px 400px 50px 150px;
 }
