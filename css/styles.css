@@ -67,8 +67,14 @@ textarea {
 	font-size: 40px;
 }
 
+.header-text a {	
+	letter-spacing: 10px;
+	text-transform: uppercase;
+}
+
 .sub {
 	font-size: 15px;
+	letter-spacing: 4px;
 	padding: 12px;
 }
 .header-text a:visited {
